@@ -99,6 +99,7 @@ func (s *server) createAttachment(hook webhook) slack.Attachment {
 
 	// put all sentry tags as attachment fields
 	for _, tag := range hook.Event.Tags {
+		s.logger.Infof("Processing: %s", tag)
 		// skip the default fields
 		if tag[0] == "culprit" || tag[0] == "project" || tag[0] == "level" {
 			continue
