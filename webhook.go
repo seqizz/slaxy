@@ -72,7 +72,7 @@ func (s *server) handleWebhook(w http.ResponseWriter, req *http.Request) {
 
 		return
 	}
-	s.logger.Infof("Message successfully sent to channel %s (%s) at %s", channelID, channel, timestamp)
+	s.logger.Infof("Message successfully sent to channel %s (%s) at %s: %s", channelID, channel, timestamp, attachment)
 
 	w.WriteHeader(200)
 }
